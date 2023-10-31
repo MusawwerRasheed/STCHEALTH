@@ -14,6 +14,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.9.0
   page_transition: ^2.1.0
+  flutter_svg: ^2.0.7
+  http: ^1.1.0
+  flutter_bloc: ^8.1.3
+  shared_preferences: ^2.2.2
+ 
 
 dev_dependencies:
   flutter_test:
@@ -27,13 +32,13 @@ flutter:
   assets:
      - assets/images/
  
-  # fonts:
-  #    - family: OpenSans Bold
-  #      fonts:
-  #        - asset: assets/fonts/Open_Sans/static/OpenSans_Bold.ttf
-  #    - family: OpenSans Regular
-  #      fonts:
-  #        - asset: assets/fonts/Open_Sans/static/OpenSans-Regular.ttf
+  fonts:
+     - family: OpenSans Bold
+       fonts:
+         - asset: assets/fonts/Open_Sans/static/OpenSans-Bold.ttf
+     - family: OpenSans Regular
+       fonts:
+         - asset: assets/fonts/Open_Sans/static/OpenSans-Regular.ttf
 
  
  

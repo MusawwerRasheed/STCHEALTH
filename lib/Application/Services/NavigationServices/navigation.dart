@@ -15,8 +15,8 @@ class Navigate {
     Navigator.pushReplacement(context,
         PageTransition(type: PageTransitionType.topToBottom, child: child));
   }
-
-
+ 
+ 
   static toReplaceAll(BuildContext context, Widget child) {
     Navigator.pushAndRemoveUntil(
       context,
