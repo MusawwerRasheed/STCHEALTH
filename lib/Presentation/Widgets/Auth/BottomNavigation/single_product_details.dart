@@ -186,8 +186,6 @@ class _SingleProductDetailsState extends State<SingleProductDetails> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text( "Reviews(${widget.rate.count})"),
-                              
-
                                 Row(
                                   children: [
                                      Text(

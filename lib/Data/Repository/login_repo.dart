@@ -7,8 +7,8 @@ import 'package:stc_health/Domain/Models/user_model.dart';
   final String baseUrl = 'https://fakestoreapi.com';
 
   Future<String> login(String username, String password) async {
-    final userData = {'username': username, 'password': password}; // Create a Map in the desired JSON format
-  
+    final userData = {'username': username, 'password': password}; 
+     
     final response = await http.post(
       Uri.parse('$baseUrl/auth/login'),
       headers: {'Content-Type': 'application/json'},

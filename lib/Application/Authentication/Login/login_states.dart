@@ -1,46 +1,17 @@
-class LoginState {
-  final String? email;
-  final String? password;
-  final bool? isSubmitting;
-  final bool? isSuccess;
-  final String? errorMessage;
+  abstract class LoginState {}
 
-  LoginState({
-     this.email,
-     this.password,
-     this.isSubmitting,
-     this.isSuccess,
-     this.errorMessage,
-  }
-  );
+class LoginInitial extends LoginState {}
 
-  factory LoginState.initial() {
-    return LoginState(
-      email: '',
-      password: '',
-      isSubmitting: false,
-      isSuccess: false,
-      errorMessage: '',
-    );
-  }
+class LoginLoading extends LoginState {}
 
-   
-  LoginState copyWith({
-    String? email,
-    String? password,
-    bool? isSubmitting,
-    bool? isSuccess,
-    String? errorMessage,
-  }) 
-  
+class LoginSuccess extends LoginState {
+  final String token;
 
-  {
-    return LoginState(
-      email: email ?? this.email,
-      password: password ?? this.password,
-      isSubmitting: isSubmitting ?? this.isSubmitting,
-      isSuccess: isSuccess ?? this.isSuccess,
-      errorMessage: errorMessage ?? this.errorMessage,
-    );
-  }
+  LoginSuccess(this.token);
+}
+
+class LoginFailure extends LoginState {
+  final String error;
+
+  LoginFailure(this.error);
 }

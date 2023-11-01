@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stc_health/Application/Products/products_cubit.dart';
 import 'package:stc_health/Application/Products/products_states.dart';
 import 'package:stc_health/Application/Services/NavigationServices/navigation.dart';
@@ -10,7 +11,8 @@ import 'package:stc_health/Data/DataSource/Static/text_styles.dart';
 import 'package:stc_health/Domain/Models/product_model.dart';
 import 'package:stc_health/Presentation/Common/app_text.dart';
 import 'package:stc_health/Presentation/Widgets/Auth/BottomNavigation/single_product.dart';
-import 'package:stc_health/Presentation/Widgets/Auth/BottomNavigation/single_product_details.dart';  
+import 'package:stc_health/Presentation/Widgets/Auth/BottomNavigation/single_product_details.dart';
+import 'package:stc_health/Presentation/Widgets/Auth/login_screen.dart';  
   
 
 
@@ -40,7 +42,8 @@ class _AllProductsPageState extends State<AllProductsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true, // Extend the body behind the AppBar
+
+      extendBody: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: Container(
@@ -58,12 +61,26 @@ class _AllProductsPageState extends State<AllProductsPage> {
               ),
             ],
           ),
-          child: AppBar(
-            automaticallyImplyLeading: false,
-            title: Center(child: Text('All Products')),
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-          ),
+          child:AppBar(
+  automaticallyImplyLeading: false,
+  centerTitle: true, // Center the title
+  title: Text('All Products'),
+  actions: [
+    IconButton(
+      icon: Icon(Icons.logout),
+      onPressed: () async {
+       // When the user logs out or you want to clear the token
+SharedPreferences prefs = await SharedPreferences.getInstance();
+prefs.remove('token');
+Navigate.toReplaceAll(context, LoginScreen()); 
+
+
+      },
+    ),
+  ],
+  backgroundColor: Colors.transparent,
+),
+
         ),
       ),
       body: BlocBuilder<ProductCubit, ProductState>(
