@@ -40,8 +40,7 @@ class _SmallImageState extends State<SmallImage> {
           left: 20.w,
           child: AppText(widget.price.toString() , style: Styles.openSansBold(context, 
           color: Appcolors.primarycolor, fontSize: 20.sp),),
-        ),
- 
+        ), 
       ],
     );
   }

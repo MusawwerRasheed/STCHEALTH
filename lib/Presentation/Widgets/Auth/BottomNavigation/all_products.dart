@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:stc_health/Application/Products/products_cubit.dart';
-import 'package:stc_health/Application/Products/products_states.dart';
+import 'package:stc_health/Presentation/Products/products_cubit.dart';
+import 'package:stc_health/Presentation/Products/products_states.dart';
 import 'package:stc_health/Application/Services/NavigationServices/navigation.dart';
 import 'package:stc_health/Data/DataSource/Static/assets.dart';
 import 'package:stc_health/Data/DataSource/Static/text_styles.dart';
@@ -17,9 +17,7 @@ import 'package:stc_health/Presentation/Widgets/Auth/login_screen.dart';
 
 
 class AllProductsPage extends StatefulWidget {
-
-
-// final Product? product;
+ 
 
   const AllProductsPage({super.key, 
   //  this.product
@@ -65,6 +63,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
   automaticallyImplyLeading: false,
   centerTitle: true, // Center the title
   title: Text('All Products'),
+  
   actions: [
     IconButton(
       icon: Icon(Icons.logout),

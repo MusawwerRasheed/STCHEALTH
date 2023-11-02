@@ -6,7 +6,6 @@ import 'package:stc_health/Presentation/Widgets/Auth/BottomNavigation/all_produc
  
 
 
-
 class BottomNavigationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

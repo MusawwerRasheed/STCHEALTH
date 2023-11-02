@@ -7,10 +7,13 @@
     final Widget? suffix;
     final Widget? prefix;
     final TextEditingController? inputcontroller;
+    final FocusNode? inputfocusnode;
 
 
-    CustomTextField({
+
+    const CustomTextField({
       Key? key,
+      this.inputfocusnode, 
       this.inputcontroller,
       this.obscure,
       this.prefix, 
@@ -23,14 +26,15 @@
 
     @override
     Widget build(BuildContext context) {
-      return TextField(
-        
+      return TextField( 
+        focusNode: inputfocusnode,       
         controller: inputcontroller,
         obscureText: obscure ?? false,
         decoration: InputDecoration(
           labelText: label,
           hintText: hintText,
           suffix: suffix, 
+          
           prefix: prefix, 
         ),
       );

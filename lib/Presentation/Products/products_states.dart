@@ -7,10 +7,10 @@ class ProductLoadingState extends ProductState {}
 class ProductLoadedState extends ProductState {
 
   final List<Product> products;
-
   ProductLoadedState(this.products);
 
 }
+
 
 class ProductErrorState extends ProductState {
   final String error;
